@@ -7,7 +7,7 @@
  */
 function cacheexclude_api_add($path) {
   $cacheexclude_list = cacheexclude_api_get();
-  $cache_exclude_list[$path] = $path;
+  $cacheexclude_list[$path] = $path;
   cacheexclude_api_save($cacheexclude_list);
 }
 
