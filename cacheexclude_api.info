@@ -1,0 +1,4 @@
+name = Cache Exclude API
+description = Provide programmatic access to cacheexclude functionality.
+core=6.x
+dependencies[] = cacheexclude

@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * add a path to the list of cache exclusions
+ * @param string $path
+ * @return void
+ */
+function cacheexclude_api_add($path) {
+  $cacheexclude_list = cacheexclude_api_get();
+  $cache_exclude_list[$path] = $path;
+  cacheexclude_api_save($cacheexclude_list);
+}
+
+/**
+ * remove a path from the lsit of cache exclusions
+ * @param string $path
+ * @return void
+ */
+function cacheexclude_api_remove($path) {
+  $cacheexclude_list = cacheexclude_api_get();
+  unset($cacheexclude_list[$path]);
+  cacheexclude_api_save($cacheexclude_list);
+}
+
+/**
+ * retrieve the list of cache exclusions
+ * @return array $cacheexclude_list
+ */
+function cacheexclude_api_get() {
+  $cacheexclude_list = array_filter(explode(PHP_EOL, variable_get('cacheexclude_list', '')));
+  $cacheexclude_list = array_combine($cacheexclude_list, $cacheexclude_list);
+  return $cacheexclude_list;
+}
+
+/**
+ * save the list of cache exclusions
+ * @param array $cacheexclude_list
+ * @return void
+ */
+function cacheexclude_api_save($path) {
+  variable_set('cacheexclude_list', implode(PHP_EOL, $cacheexclude_list));
+}

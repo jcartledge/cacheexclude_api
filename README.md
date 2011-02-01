@@ -1,0 +1,1 @@
+This [Drupal](http://drupal.org/) module provides a simple API for accessing and modifying the list of paths maintained by the [Cache Exclude](http://drupal.org/project/cacheexclude) module, enabling other modules to control cache exclusions programmatically.
