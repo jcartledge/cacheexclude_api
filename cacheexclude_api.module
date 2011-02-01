@@ -37,6 +37,6 @@ function cacheexclude_api_get() {
  * @param array $cacheexclude_list
  * @return void
  */
-function cacheexclude_api_save($path) {
+function cacheexclude_api_save($cacheexclude_list) {
   variable_set('cacheexclude_list', implode(PHP_EOL, $cacheexclude_list));
 }
