@@ -27,7 +27,7 @@ function cacheexclude_api_remove($path) {
  * @return array $cacheexclude_list
  */
 function cacheexclude_api_get() {
-  $cacheexclude_list = array_filter(explode(PHP_EOL, variable_get('cacheexclude_list', '')));
+  $cacheexclude_list = array_filter(array_map('trim', explode(PHP_EOL, variable_get('cacheexclude_list', ''))));
   $cacheexclude_list = array_combine($cacheexclude_list, $cacheexclude_list);
   return $cacheexclude_list;
 }
